@@ -1,6 +1,8 @@
 package com.indra.davinci.resources;
 
 import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 public class Main {
 
@@ -12,6 +14,11 @@ public class Main {
 
 			@Override
 			public void run() {
+				try {
+                    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+                }
+
 				new ResourcesGUI();
 			}
 		});
